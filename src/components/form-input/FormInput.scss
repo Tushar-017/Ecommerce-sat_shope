@@ -28,6 +28,7 @@ $main-color: black;
       outline: none;
     }
 
+    // next sibling
     &:focus~.form-input-label {
       @include shrinkLabel();
     }
