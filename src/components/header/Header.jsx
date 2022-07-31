@@ -1,15 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useContext} from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
-import { auth } from '../../utils/firebase/firebase';
-import { signOut } from "firebase/auth";
-import {Outlet} from 'react-router-dom'
 
+import { signOutUser } from '../../utils/firebase/firebase';
+import { UserContext  } from '../../contexts/user.context';
 import { ReactComponent as Logo } from '../../assets/catbag.svg';
+
+
 import './Header.scss'
 
-const Header = ({ currentUser }) => {
-  // console.log(currentUser)
+const Header = () => {
+  const {currentUser} = useContext(UserContext);
+  
+
   return (
     <>
     <div className='header'>
@@ -21,7 +24,7 @@ const Header = ({ currentUser }) => {
         <Link className='nav-link' to='/shop'>CONTACT</Link>
         {
           currentUser ?
-          (<div className='nav-link' onClick={() => signOut(auth)}>SIGN OUT</div>)
+          (<span className='nav-link' onClick={signOutUser}>SIGN OUT</span>)
           : 
           (<Link className='nav-link' to='/signin'>SIGN IN</Link>)
         }

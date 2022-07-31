@@ -7,10 +7,10 @@ import CustomButton from '../custom-button/CustomButton'
 import './SignUp.scss'
 
 const defaultFormFields = {
-    displayName: '',
-    email: '',
-    password: '',
-    confirmPassword:''
+  displayName: '',
+  email: '',
+  password: '',
+  confirmPassword:''
 }
 
 const SignUp = () => {
@@ -18,7 +18,6 @@ const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { displayName, email, password,confirmPassword } = formFields; 
 
-  // console.log(formFields)
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -31,7 +30,11 @@ const SignUp = () => {
       return; 
     }
     try{
-      const {user} = await createAuthUserWithEmailAndPassword(email,password);
+      const {user} = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
       await createUserDocumentFromAuth(user, {displayName})
       resetFormFields();
     }catch(error){
