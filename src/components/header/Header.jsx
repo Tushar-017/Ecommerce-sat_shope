@@ -1,16 +1,20 @@
 import React, {useContext} from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-
-import { signOutUser } from '../../utils/firebase/firebase';
 import { UserContext  } from '../../contexts/user.context';
-import { ReactComponent as Logo } from '../../assets/catbag.svg';
+import { CartContext } from '../../contexts/cart.context';
 
+import { ReactComponent as Logo } from '../../assets/catbag.svg';
+import { signOutUser } from '../../utils/firebase/firebase';
+
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 import './Header.scss'
 
 const Header = () => {
   const {currentUser} = useContext(UserContext);
+  const {isCartOpen} = useContext(CartContext);
   
 
   return (
@@ -28,7 +32,9 @@ const Header = () => {
           : 
           (<Link className='nav-link' to='/signin'>SIGN IN</Link>)
         }
+        <CartIcon/>
       </div>
+      {isCartOpen && <CartDropdown/>}
     </div>
     <Outlet/>
     </>
