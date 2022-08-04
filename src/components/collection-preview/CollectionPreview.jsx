@@ -1,18 +1,23 @@
 import React from 'react'
+// import { Link } from 'react-router-dom'
 
-import './CollectionPreview.scss'
+import {Preview, Title,CollectionPreviewContainer } from './CollectionPreview.style'
 import CollectionItem from '../collection-item/CollectionItem'
 
-const CollectionPreview = ({title,items}) => {
+const CollectionPreview = ({title,products}) => {
   return (
-    <div className='collection-preview'>
-      <h1 className="title">{title.toUpperCase()}</h1>
-      <div className="preview">
-        {items.filter((item,idx)=> idx < 4).map(({id, ...otherItemProps}) => (
-          <CollectionItem key={id} {...otherItemProps} />
+    <CollectionPreviewContainer>
+      <h2>
+        <Title to={title} >
+          {title.toUpperCase()}
+        </Title>
+      </h2>
+      <Preview>
+        {products.filter((_,idx)=> idx < 4).map((product) => (
+          <CollectionItem key={product.id} product={product} />
         ))}
-      </div>
-    </div>
+      </Preview>
+    </CollectionPreviewContainer>
   )
 }
 

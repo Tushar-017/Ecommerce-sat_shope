@@ -1,16 +1,12 @@
 import React from 'react'
 
 
-import './Directory.scss'
+import {DirectoryMenu} from './Directory.style'
 import MenuItem from '../menu-item/MenuItem';
 
 // const Directory = ({})
 
-class Directory extends React.Component{
-  constructor(){
-    super();
-
-    this.state = {
+const Category = {
       sections : [{
         title: 'hats',
         imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -32,31 +28,35 @@ class Directory extends React.Component{
       {
         title: 'women',
         imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-        size: 'large',
+        size: "true",
         id: 4,
-        linkUrl: 'shop/womens'
+        linkUrl: 'shop/women'
       },
       {
         title: 'men',
         imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-        size: 'large',
+        size: "true",
         id: 5,
-        linkUrl: 'shop/mens'
+        linkUrl: 'shop/men'
       }]
     }
-  }
 
-  render(){
-    return(
-      <div className="directory-menu">
+
+
+
+const Directory = () => {
+  return (
+      <DirectoryMenu>
         {
-          this.state.sections.map(({id, ...otherSectionProp}) => (
+          Category.sections.map(({id, ...otherSectionProp}) => (
             <MenuItem key={id} {...otherSectionProp}/>
           ))
         }
-      </div>
-    )
-  }
+      </DirectoryMenu> 
+  )
 }
 
 export default Directory
+
+
+
