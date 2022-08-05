@@ -1,10 +1,12 @@
-import React from 'react';
-// import {onAuthStateChanged } from "firebase/auth";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import  {useEffect} from 'react';
+import { useDispatch } from 'react-redux';
 
+import {Routes, Route,} from "react-router-dom";
+
+
+
+import { onAuthStateChangedListener,createUserDocumentFromAuth  } from './utils/firebase/firebase';
+import { setCurrentUser  } from './store/user/user.action';
 
 import './App.scss';
 import Header from './components/header/Header';
@@ -16,15 +18,28 @@ import CheckoutPage from './pages/checkout/CheckoutPage';
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if(user){
+        createUserDocumentFromAuth(user);
+      }
+
+      dispatch(setCurrentUser(user));
+    });
+    
+    return unsubscribe;
+  },[dispatch])
 
   return (
     <div>
       <Routes>
             <Route path='/' element={<Header/>}>
               <Route index element={<Homepage/>}/>
-              <Route path='/shop/*' element={<ShopPage/>}/>
-              <Route path='/signin' element={<SignInUp/>}/>
-              <Route path='/checkout' element={<CheckoutPage/>}/>
+              <Route path='shop/*' element={<ShopPage/>}/>
+              <Route path='auth' element={<SignInUp/>}/>
+              <Route path='checkout' element={<CheckoutPage/>}/>
             </Route>
       </Routes>
     </div>
