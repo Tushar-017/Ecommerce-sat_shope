@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {  Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-import { CartContext } from '../../contexts/cart.context';
 import { selectCurrentUser } from '../../store/user/user.selector';
+import {selectIsCartOpen } from '../../store/cart/cart.selector';
 
 import { ReactComponent as Logo } from '../../assets/catbag.svg';
 import { signOutUser } from '../../utils/firebase/firebase';
@@ -16,7 +16,8 @@ import {NavigationContainer, LogoContainer, NavLinks, NavLink} from './Header.st
 
 const Header = () => {
   const currentUser = useSelector(selectCurrentUser)
-  const {isCartOpen} = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
+
   
 
   return (

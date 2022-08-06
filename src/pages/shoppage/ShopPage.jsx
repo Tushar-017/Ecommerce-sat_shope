@@ -14,11 +14,11 @@ const ShopPage = () => {
   useEffect(() => {
       const getCategoriesMap = async () => {
         const categoriesArray = await getCategoriesAndDocuments('categories');
-        console.log(categoriesArray);
         dispatch(setCategories(categoriesArray ));
       }
       getCategoriesMap();
-  },[])
+      // eslint-disable-next-line
+  },[]) 
 
   return (
     <Routes>
