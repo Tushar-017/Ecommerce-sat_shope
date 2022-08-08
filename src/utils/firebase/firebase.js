@@ -32,10 +32,10 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore();
 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({prompt: 'select_account'});
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt: 'select_account'});
 
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
 
 export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
@@ -58,9 +58,7 @@ export const getCategoriesAndDocuments = async () => {
   const querySnapShot = await getDocs(q);
   return querySnapShot.docs.map((docSnapShot) => docSnapShot.data());
 
-  
-
-}
+};
 
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) => {
@@ -86,8 +84,7 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
       }
     }
 
-  return userDocRef;
-
+  return userSnapshot;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email,password) => {
@@ -106,3 +103,16 @@ export const signInAuthUserWithEmailAndPassword = async (email,password) => {
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
+};
