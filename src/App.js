@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import {Routes, Route,} from "react-router-dom";
 
 
-
-
 import { checkUserSession  } from './store/user/user.action';
 
 import './App.scss';
