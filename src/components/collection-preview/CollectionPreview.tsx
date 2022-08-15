@@ -1,10 +1,18 @@
-import React from 'react'
-// import { Link } from 'react-router-dom'
+import { FC } from 'react'
+
 
 import {Preview, Title,CollectionPreviewContainer } from './CollectionPreview.style'
+
 import CollectionItem from '../collection-item/CollectionItem'
 
-const CollectionPreview = ({title,products}) => {
+import { CategoryItem } from '../../store/category/category.types'
+
+type CollectionPreviewProps = {
+  title: string;
+  products: CategoryItem[];
+};
+
+const CollectionPreview: FC<CollectionPreviewProps> = ({title,products}) => {
   return (
     <CollectionPreviewContainer>
       <h2>

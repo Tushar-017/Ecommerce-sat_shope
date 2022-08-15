@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {selectCartCount , selectIsCartOpen} from '../../store/cart/cart.selector'
 import { setIsCartOpen} from '../../store/cart/cart.action'
 
+import {ReactComponent as ShoppingIcon} from '../../assets/shopping-bag.svg'
 
-import {ShoppingIcon,CartIconContainer, ItemCount} from './CartIcon.style'
+import {CartIconContainer, ItemCount} from './CartIcon.style'
 
 const CartIcon = () => {
    const dispatch = useDispatch();

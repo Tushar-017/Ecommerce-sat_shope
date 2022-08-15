@@ -1,9 +1,7 @@
-import React from 'react'
-
 import {HomepageContainer} from './homepage.style'
 import Directory from '../../components/directory/Directory'
 
-const Homepage = (props) => {
+const Homepage = () => {
   return (
     <HomepageContainer>
       <Directory />
