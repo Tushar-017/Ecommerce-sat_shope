@@ -32,7 +32,9 @@ const Header = () => {
       </LogoContainer>
       <NavLinks>
         <NavLink to='/shop'>SHOP</NavLink>
-        <NavLink to='/shop'>CONTACT</NavLink>
+        <a className="option" href="https://www.linkedin.com/in/tushar-rajput-7aa968200/">
+        CONTACT
+      </a>
         {
           currentUser ?
           (<NavLink as='span' onClick={signOutUser}>SIGN OUT</NavLink>)
