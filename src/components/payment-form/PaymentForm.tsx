@@ -7,7 +7,7 @@ import { selectCurrentUser } from '../../store/user/user.selector';
 
 import {BUTTON_TYPE_CLASS} from '../custom-button/CustomButton';
 
-import { PaymentFormContainer, FormContainer, PaymentButton} from './payment-form.style';
+import { PaymentFormContainer, FormContainer, PaymentButton, PaymentInstruction} from './payment-form.style';
 
 const PaymentForm = () => {
   const strip = useStripe();
@@ -70,6 +70,12 @@ const PaymentForm = () => {
           isLoading= {isProcessingPayment}
           buttonType={BUTTON_TYPE_CLASS.inverted}
         >Pay Now</PaymentButton>
+        <hr />
+        <PaymentInstruction>
+          <p>*Please use the following test credit card for payments*</p>
+          4242 4242 4242 4242 - Exp: 04/24 - CVV: 24242
+        </PaymentInstruction>
+        <br />
       </FormContainer>
     </PaymentFormContainer>
   )

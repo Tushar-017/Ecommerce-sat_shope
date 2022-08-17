@@ -39,3 +39,11 @@ export const PaymentButton = styled(CustomButton)`
   margin-top: 30px;
   font-size: 14px;
 `;
+
+export const PaymentInstruction =  styled.div`
+  color: red;
+  font-size: 14px;
+  @media screen and (max-width: 450px){
+    font-size: 10px;
+  }
+`
