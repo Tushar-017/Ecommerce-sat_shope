@@ -1,10 +1,11 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
 import { selectCategoriesMap, selectCategoriesIsLoading } from "../../store/category/category.selector";
 
 import CollectionPreview  from "../../components/collection-preview/CollectionPreview";
 import Spinner from "../../components/spinner/Spinner";
+
+
 
 
 

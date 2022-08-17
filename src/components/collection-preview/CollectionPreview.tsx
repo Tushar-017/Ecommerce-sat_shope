@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 
-import {Preview, Title,CollectionPreviewContainer } from './CollectionPreview.style'
+import {PreviewContainer, TitleContainer,CollectionPreviewContainer } from './CollectionPreview.style'
 
 import CollectionItem from '../collection-item/CollectionItem'
 
@@ -16,15 +16,15 @@ const CollectionPreview: FC<CollectionPreviewProps> = ({title,products}) => {
   return (
     <CollectionPreviewContainer>
       <h2>
-        <Title to={title} >
+        <TitleContainer to={title} >
           {title.toUpperCase()}
-        </Title>
+        </TitleContainer>
       </h2>
-      <Preview>
+      <PreviewContainer>
         {products.filter((_,idx)=> idx < 4).map((product) => (
           <CollectionItem key={product.id} product={product} />
         ))}
-      </Preview>
+      </PreviewContainer>
     </CollectionPreviewContainer>
   )
 }

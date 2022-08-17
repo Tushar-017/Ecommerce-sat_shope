@@ -7,14 +7,15 @@ import CartItem from '../cart-item/CartItem'
 import { selectCartItems } from '../../store/cart/cart.selector';
 
 import {CartDropdownContainer,EmptyMessage, CartItems} from './CartDropdown.style'
+import { useCallback } from 'react';
 
 const CartDropdown = () => {
    const cartItems = useSelector(selectCartItems); 
    const navigate = useNavigate();
 
-   const goToCheckoutHandler = () => {
+   const goToCheckoutHandler = useCallback(() => {
       navigate('/checkout')
-   }
+   },[])
 
    return (
       <CartDropdownContainer>

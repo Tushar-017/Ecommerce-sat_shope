@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 
 export const Item = styled.div`
-  width: 100%;
+  width: 22vw;
   display: flex;
   flex-direction: column;
   height: 350px;
   align-items: center;
   position: relative;
+
 
   img {
     width: 100%;
@@ -22,6 +23,13 @@ export const Item = styled.div`
     position: absolute;
     top: 255px;
     display: none;
+
+    @media screen and (max-width: 800px){
+      display: block;
+      opacity: 0.7;
+      min-width: unset;
+      padding: 0 10px;
+    }
   }
 
   &:hover {
@@ -35,6 +43,21 @@ export const Item = styled.div`
       justify-content: center;
     }
   }
+
+  @media screen and (max-width: 800px){
+    width: 41vw;
+    align-item: center;
+
+    &:hover {
+    img {
+      opacity: unset;
+    }
+
+    button {
+      opacity: unset;
+    }
+  }
+}
 `
 
 export const Footer = styled.div`

@@ -8,6 +8,10 @@ export const CategoryTitle = styled.h2`
    font-size: 38px;
    margin-bottom: 25px;
    text-align: center;
+
+   @media screen and (max-width: 800px){
+      font-size: 28px;
+   }
 `
 
 export const CategoryContainer = styled.div`
@@ -15,6 +19,15 @@ export const CategoryContainer = styled.div`
    grid-template-columns: repeat(4, 1fr);
    column-gap: 20px;
    row-gap: 50px;
+
+
+   @media screen and (max-width: 800px){
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      align-items: center;
+      justify-items: center;
+      padding: 10px;
+   }
 `
 
 
