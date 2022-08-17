@@ -10,7 +10,12 @@ export const CheckoutItems = styled.div`
    padding: 15px 0;
    font-size: 20px;
    align-items: center;
-
+   @media screen and (max-width: 800px){
+      font-size: 13px;
+   }
+   @media screen and (max-width: 560px){
+      font-size: 12px;
+   }
 `
 
 export const ImageContainer = styled.div`
@@ -37,6 +42,9 @@ export const Arrow = styled.div`
 
 export const Value = styled.span`
    margin: 0 10px;
+   @media screen and (max-width: 580px){
+      margin: 0 7px;
+   }
 `
 
 export const RemoveButton = styled.div`

@@ -37,9 +37,15 @@ export const NavLinks = styled.div`
   @media screen and (max-width: 800px){
     width: 84%;
   }
+  @media screen and (max-width: 400px){
+    font-size: 13px;
+  }
 `
 
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  @media screen and (max-width: 400px){
+    padding: 8px 13px;
+  }
 `

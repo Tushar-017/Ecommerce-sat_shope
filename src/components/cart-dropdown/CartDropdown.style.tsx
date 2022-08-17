@@ -15,6 +15,16 @@ export const CartDropdownContainer = styled.div`
    right: 40px;
    z-index: 5;
 
+   @media screen and (max-width: 800px){
+      width: 200px;
+      height: 280px;
+   }
+   @media screen and (max-width: 420px){
+      padding: 8px;
+      top: 70px;
+      right: 35px;
+   }
+
    ${BaseButton}, ${GoogleSignInButton}, ${InvertedButton} {
       margin-top: auto;
    }
@@ -23,6 +33,9 @@ export const CartDropdownContainer = styled.div`
 export const EmptyMessage = styled.span`
    font-size: 18px;
    margin: 50px auto;
+   @media screen and (max-width: 800px){
+      font-size: 14px;
+   }
 `
 
 export const CartItems = styled.div`
@@ -30,4 +43,7 @@ export const CartItems = styled.div`
    display: flex;
    flex-direction: column;
    overflow: scroll;
+   @media screen and (max-width: 800px){
+      height: 200px;
+   }
 `
