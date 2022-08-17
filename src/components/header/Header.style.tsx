@@ -14,6 +14,7 @@ export const NavigationContainer = styled.div`
     padding: 10px;
     margin-bottom: 20px;
   }
+
 `
 
 export const LogoContainer = styled(Link)`
