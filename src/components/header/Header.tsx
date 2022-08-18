@@ -32,7 +32,7 @@ const Header = () => {
       </LogoContainer>
       <NavLinks>
         <NavLink to='/shop'>SHOP</NavLink>
-        <a className="option" href="https://www.linkedin.com/in/tushar-rajput-7aa968200/">
+        <a className="option" href="https://www.linkedin.com/in/tushar-rajput-7aa968200/" target="_blank" rel="noreferrer">
         CONTACT
       </a>
         {
