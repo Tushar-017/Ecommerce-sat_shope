@@ -12,7 +12,7 @@ Ecommerce website build using React and Firebase.
 - Firebase as serverless
 - Redux for State Management
 - React Router for Routing
-- Node-SaSS for styling
+- Styled-components for styling
 - Stripe as payment Gateway
 
 ## Getting Started
@@ -39,7 +39,7 @@ npm run build
 ## Built With
 
 - React JS
-- Node SaSS
+- Styled-components
 - Firebase
 - Redux
 - Stripe
