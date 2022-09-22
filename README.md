@@ -2,7 +2,7 @@
 
 ## [Check it live here](https://sat-shopping.netlify.app/)
 
-
+<img src="images/app-wall.png" />
 
 Ecommerce website build using React and Firebase.
 
