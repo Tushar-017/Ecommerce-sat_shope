@@ -15,6 +15,14 @@ Ecommerce website build using React and Firebase.
 - Styled-components for styling
 - Stripe as payment Gateway
 
+## Features
+
+- login/SignUp
+- add item to the cart
+- checkout
+- Card Payment
+- various category
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
